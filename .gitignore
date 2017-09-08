@@ -1,0 +1,6 @@
+
+#Ignore builds
+dist/
+
+#Ignore all Node modules
+node_modules

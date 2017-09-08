@@ -1,0 +1,31 @@
+{
+    "name": "sorting-js",
+    "version": "1.0.0",
+    "description":
+        "A JavaScript project for learning sorting and sorting algorithms.",
+    "main": "app.js",
+    "scripts": {
+        "start": "npm run build && node dist/main.bundle.js",
+        "watch":
+            "babel --no-babelrc --watch --presents es2015 src/app.js -o dist/main.bundle.js --source-maps",
+        "build":
+            "babel --no-babelrc --presents es2015 src/app.js -o dist/main.bundle.js --source-maps",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cwgruss/sorting-js.git"
+    },
+    "keywords": ["sorting", "sorting", "algorithms"],
+    "author": "Carter Gruss",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/cwgruss/sorting-js/issues"
+    },
+    "homepage": "https://github.com/cwgruss/sorting-js#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-es2015": "^6.24.1"
+    }
+}
