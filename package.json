@@ -1,16 +1,15 @@
 {
     "name": "sorting-js",
     "version": "1.0.0",
-    "description":
-        "A JavaScript project for learning sorting and sorting algorithms.",
+    "description": "A JavaScript project for learning sorting and sorting algorithms.",
     "main": "app.js",
     "scripts": {
         "start": "npm run build && node dist/main.bundle.js",
         "watch":
-            "babel --no-babelrc --watch --presents es2015 src/app.js -o dist/main.bundle.js --source-maps",
+            "babel --no-babelrc --watch --presents es2015 app/src/app.js -o dist/main.bundle.js --source-maps",
         "build":
-            "babel --no-babelrc --presents es2015 src/app.js -o dist/main.bundle.js --source-maps",
-        "test": "echo \"Error: no test specified\" && exit 1"
+            "babel --no-babelrc --presents es2015 app/src/app.js -o dist/main.bundle.js --source-maps",
+        "test": "jasmine"
     },
     "repository": {
         "type": "git",
@@ -26,6 +25,15 @@
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.6.0",
-        "babel-preset-es2015": "^6.24.1"
+        "babel-preset-es2015": "^6.24.1",
+        "eslint": "^4.6.1",
+        "eslint-config-airbnb-base": "^12.0.0",
+        "eslint-plugin-import": "^2.7.0",
+        "jasmine": "^2.8.0",
+        "karma": "^1.7.1",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-jasmine": "^1.1.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "phantomjs": "^2.1.7"
     }
 }
