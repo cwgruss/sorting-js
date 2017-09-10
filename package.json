@@ -5,17 +5,19 @@
     "main": "app.js",
     "scripts": {
         "start": "npm run build && node dist/main.bundle.js",
-        "watch":
-            "babel --no-babelrc --watch --presents es2015 app/src/app.js -o dist/main.bundle.js --source-maps",
-        "build":
-            "babel --no-babelrc --presents es2015 app/src/app.js -o dist/main.bundle.js --source-maps",
+        "watch": "babel --no-babelrc --watch --presents es2015 app/src/app.js -o dist/main.bundle.js --source-maps",
+        "build": "babel --no-babelrc --presents es2015 app/src/app.js -o dist/main.bundle.js --source-maps",
         "test": "jasmine"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/cwgruss/sorting-js.git"
     },
-    "keywords": ["sorting", "sorting", "algorithms"],
+    "keywords": [
+        "sorting",
+        "sorting",
+        "algorithms"
+    ],
     "author": "Carter Gruss",
     "license": "ISC",
     "bugs": {
@@ -29,6 +31,7 @@
         "eslint": "^4.6.1",
         "eslint-config-airbnb-base": "^12.0.0",
         "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jasmine": "^2.8.4",
         "jasmine": "^2.8.0",
         "karma": "^1.7.1",
         "karma-chrome-launcher": "^2.2.0",
