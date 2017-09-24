@@ -5,8 +5,10 @@
     "main": "app.js",
     "scripts": {
         "start": "npm run build && node dist/main.bundle.js",
-        "watch": "watchify app/src/index.js --debug -t babelify -o js/bundle.js",
-        "build": "browserify app/src/index.js --debug -o dist/main.bundle.js",
+        "watch":
+            "watchify -r ./app/src/index.js:Sort --debug -o 'exorcist dist/bundle.js.map > dist/main.bundle.js' -v",
+        "build":
+            "browserify -r ./app/src/index.js:Sort --debug | exorcist dist/bundle.js.map > dist/main.bundle.js",
         "test": "jasmine",
         "clean": "rm -r dist/*"
     },
@@ -55,6 +57,7 @@
     "dependencies": {
         "babel-core": "^6.26.0",
         "babel-polyfill": "^6.26.0",
+        "exorcist": "^0.4.0",
         "lodash": "^4.17.4",
         "uniq": "^1.0.1"
     }
