@@ -7,10 +7,8 @@ const ArrayProto = Array.prototype;
 // const ObjProto = Object.prototype;
 
 function Sort(arr) {
-    console.log(Util);
-    this.arr = Util.generateUniqueArray(100);
-    Util.shuffle(this.arr);
-    this.length = this.arr.length;
+    this.arr = null;
+    this.length = 0;
     if (arr instanceof Array) {
         this.arr = arr;
         this.length = this.arr.length;
@@ -33,4 +31,9 @@ Sort.prototype = {
     },
 };
 
-module.exports = Sort;
+// module.exports = Sort;
+
+(function (global) {
+    global.Util = Util;
+    global.Sort = Sort;
+}(this));
