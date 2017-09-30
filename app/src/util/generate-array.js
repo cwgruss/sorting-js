@@ -11,8 +11,13 @@ function generateRandomArray(length, max) {
 }
 exports.generateRandomArray = generateRandomArray;
 
-function generateUniqueArray(length) {
-    const arr = Array.from(new Array(length), (val, index) => index + 1);
+function generateUniqueArray(start, end) {
+    const arr = [];
+    let i;
+
+    for (i = start; i < end; i += 1) {
+        arr.push(i);
+    }
     return shuffle(arr);
 }
 exports.generateUniqueArray = generateUniqueArray;

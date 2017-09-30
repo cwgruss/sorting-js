@@ -11,7 +11,7 @@ describe('Utility library', () => {
         });
 
         it('can create array of unique integers', () => {
-            const array = app.Util.generateUniqueArray(10);
+            const array = app.Util.generateUniqueArray(1, 10);
 
             expect(array).toBeDefined();
         });
