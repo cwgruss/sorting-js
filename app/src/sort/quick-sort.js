@@ -38,8 +38,8 @@ function quickSort(array) {
 
     return function (compareFunction) {
         let result = array.slice(0);
-        const first = first || 0;
-        const last = last || result.length - 1;
+        const first = 0;
+        const last = result.length - 1;
         result = sort(result, first, last, compareFunction);
         return result;
     };

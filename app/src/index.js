@@ -1,13 +1,16 @@
 import bubbleSort from './sort/bubble-sort';
 import selectionSort from './sort/selection-sort';
 import quickSort from './sort/quick-sort';
+import Util from './util/util';
 
 const ArrayProto = Array.prototype;
 // const ObjProto = Object.prototype;
 
 function Sort(arr) {
-    this.arr = null;
-    this.length = 0;
+    console.log(Util);
+    this.arr = Util.generateUniqueArray(100);
+    Util.shuffle(this.arr);
+    this.length = this.arr.length;
     if (arr instanceof Array) {
         this.arr = arr;
         this.length = this.arr.length;
