@@ -11,7 +11,7 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         // list of files / patterns to load in the browser
-        files: ['dist/bundle.js', 'spec/**/*.spec.js'],
+        files: ['dist/bundle.js', 'spec/*.spec.js', 'spec/**/*.spec.js'],
 
         // list of files to exclude
         exclude: [],
@@ -20,9 +20,8 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             // add webpack as preprocessor
-            'app/src/index.js': ['webpack'],
-            'spec/*.spec.js': ['webpack'],
-            'spec/**/*.spc.js': ['webpack'],
+            'spec/*.spec.js': ['babel', 'webpack', 'sourcemap'],
+            'spec/**/*.spec.js': ['babel', 'webpack', 'sourcemap'],
         },
 
         // test results reporter to use
@@ -38,18 +37,18 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_DEBUG,
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Chrome'],
+        browsers: ['Firefox'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
+        singleRun: true,
 
         // Concurrency level
         // how many browser should be started simultaneous

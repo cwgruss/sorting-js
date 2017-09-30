@@ -15,4 +15,7 @@ module.exports = {
         Sort: 'Sort',
         Util: 'Util',
     },
+    // module: {
+    //     rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }],
+    // },
 };

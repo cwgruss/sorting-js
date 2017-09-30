@@ -5,9 +5,9 @@
     "main": "app.js",
     "scripts": {
         "start": "npm run build && node dist/main.bundle.js",
-        "watch": "watchify -r ./app/src/index.js:Sort --debug -o 'exorcist dist/bundle.js.map > dist/main.bundle.js' -v",
+        "watch": "",
         "build": "webpack --debug",
-        "test": "karma start karma.conf.js ",
+        "test": "karma start karma.conf.js --single-run",
         "clean": "rm -r dist/*"
     },
     "repository": {
@@ -25,19 +25,6 @@
         "url": "https://github.com/cwgruss/sorting-js/issues"
     },
     "homepage": "https://github.com/cwgruss/sorting-js#readme",
-    "browserify": {
-        "transform": [
-            [
-                "babelify",
-                {
-                    "comments": false,
-                    "presets": [
-                        "es2015"
-                    ]
-                }
-            ]
-        ]
-    },
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
@@ -50,9 +37,12 @@
         "eslint-plugin-jasmine": "^2.8.4",
         "jasmine": "^2.8.0",
         "karma": "^1.7.1",
+        "karma-babel-preprocessor": "^7.0.0",
         "karma-chrome-launcher": "^2.2.0",
+        "karma-firefox-launcher": "^1.0.1",
         "karma-jasmine": "^1.1.0",
         "karma-phantomjs-launcher": "^1.0.4",
+        "karma-sourcemap-loader": "^0.3.7",
         "karma-webpack": "^2.0.4",
         "phantomjs": "^2.1.7",
         "requirejs": "^2.3.5",
@@ -60,7 +50,6 @@
     },
     "dependencies": {
         "babel-polyfill": "^6.26.0",
-        "lodash": "^4.17.4",
-        "uniq": "^1.0.1"
+        "lodash": "^4.17.4"
     }
 }
