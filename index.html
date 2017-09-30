@@ -9,19 +9,15 @@
     <script>
     const Sort = require('Sort');
 
-const obj = {
-    arr: [2, 4, 2, 10, 6, 7, 1, 4],
-    options: null,
-};
-const a = new Sort(obj.arr);
+const a = new Sort();
 console.log('====== SORTING-JS ======');
 console.log(`Original Array: ${a.toString()}`);
 
-let result = a.selectionSort((item1, item2) => item1 > item2);
+let result = a.selectionSort((item1, item2) => item1 < item2);
 console.log(`Selection Sort:${result}`);
-result = a.bubbleSort((item1, item2) => item1 > item2);
+result = a.bubbleSort((item1, item2) => item1 < item2);
 console.log(`Bubble Sort:${result}`);
-result = a.quickSort((item1, item2) => item1 >= item2);
+result = a.quickSort((item1, item2) => item1 <= item2);
 console.log(`Quick Sort: ${result}`);
 </script>
 </head>
