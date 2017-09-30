@@ -1,5 +1,7 @@
 // Karma configuration
 // Generated on Sun Sep 10 2017 12:09:14 GMT-0500 (CDT)
+const webpackConfig = require('./webpack.config.js');
+const path = require('path');
 
 module.exports = function (config) {
     config.set({
@@ -11,7 +13,7 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         // list of files / patterns to load in the browser
-        files: ['dist/bundle.js', 'spec/*.spec.js', 'spec/**/*.spec.js'],
+        files: ['dist/*.js', 'spec/*.spec.js', 'spec/**/*.spec.js'],
 
         // list of files to exclude
         exclude: [],
@@ -20,8 +22,20 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             // add webpack as preprocessor
-            'spec/*.spec.js': ['babel', 'webpack', 'sourcemap'],
-            'spec/**/*.spec.js': ['babel', 'webpack', 'sourcemap'],
+            'spec/*.spec.js': ['webpack', 'sourcemap'],
+            'spec/**/*.spec.js': ['webpack', 'sourcemap'],
+        },
+
+        webpack: {
+            devtool: 'inline-source-map',
+            module: {
+                loaders: [
+                    {
+                        test: /\.js$/,
+                        loader: 'babel-loader',
+                    },
+                ],
+            },
         },
 
         // test results reporter to use

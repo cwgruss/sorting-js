@@ -7,16 +7,18 @@
     <script type="text/javascript" src="dist/bundle.js">
     </script>
     <script>
-    const a = new cwg.Sort([10, 8, 6, 3, 8, 1, 0, 4]);
-console.log('====== SORTING-JS ======');
-console.log(`Original Array: ${a.toString()}`);
-
-let result = a.selectionSort((item1, item2) => item1 < item2);
-console.log(`Selection Sort:${result}`);
-result = a.bubbleSort((item1, item2) => item1 < item2);
-console.log(`Bubble Sort:${result}`);
-result = a.quickSort((item1, item2) => item1 <= item2);
-console.log(`Quick Sort: ${result}`);
+    const { Sort, Util } = this.app;
+//
+// const a = new Sort([10, 8, 6, 3, 8, 1, 0, 4]);
+// console.log('====== SORTING-JS ======');
+// console.log(`Original Array: ${a.toString()}`);
+//
+// let result = a.selectionSort((item1, item2) => item1 < item2);
+// console.log(`Selection Sort:${result}`);
+// result = a.bubbleSort((item1, item2) => item1 < item2);
+// console.log(`Bubble Sort:${result}`);
+// result = a.quickSort((item1, item2) => item1 <= item2);
+// console.log(`Quick Sort: ${result}`);
 </script>
 </head>
 
