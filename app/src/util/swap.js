@@ -2,10 +2,10 @@
  * A swap function that doesn't mutate the
  * original array.
  *
- * @param  {Array} array  [description]
- * @param  {number} index1 [description]
- * @param  {number} index2 [description]
- * @return {Array}        [description]
+ * @param  {Array} array  The source array, with indicies 'index1' and index2'
+ * @param  {number} index1 An index in 'array', which will be swapped with 'index2'
+ * @param  {number} index2 A second index in 'array', which will be swapped with 'index1'
+ * @return {Array}        
  */
 function swap(array, index1, index2) {
     const newArray = array.slice();
