@@ -1,4 +1,5 @@
-import { Util } from '../app/src/index';
+import { Util } from '../../app/src/index';
+
 describe('Utility library', () => {
     describe('Util Suite', () => {
         it('should be able to be instantiated', () => {
