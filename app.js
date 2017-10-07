@@ -9,9 +9,9 @@ const root =
     this ||
     {};
 
-(function (global) {
-    global.app = {
-        Sort,
-        Util,
-    };
-}(root));
+// (function (global) {
+//     global.app = {
+//         Sort,
+//         Util,
+//     };
+// }(root));
