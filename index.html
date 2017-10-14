@@ -7,10 +7,13 @@
     <script type="text/javascript" src="dist/bundle.js">
     </script>
     <script>
-    const { Sort, Util } = this.app;
-//
-// const a = new Sort([10, 8, 6, 3, 8, 1, 0, 4]);
-// console.log('====== SORTING-JS ======');
+ var array = [4,3,1,2,10,2,2,8,5,11];
+    const a = new Sort(array);
+    var sorted = a.quickSort(function(a,b){
+        return a < b;
+    });
+    console.log("Sorted: ",sorted);
+    // console.log('====== SORTING-JS ======');
 // console.log(`Original Array: ${a.toString()}`);
 //
 // let result = a.selectionSort((item1, item2) => item1 < item2);

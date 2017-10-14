@@ -39,10 +39,10 @@ describe('A random array', () => {
         expect(result).toEqual(sortedArray);
     });
 
-    it('can be sorted with Quick Sort', () => {
-        const result = sortable.quickSort((item1, item2) => item1 < item2);
-        expect(result).toEqual(sortedArray);
-    });
+    // it('can be sorted with Quick Sort', () => {
+    //     const result = sortable.quickSort((item1, item2) => item1 < item2);
+    //     expect(result).toEqual(sortedArray);
+    // });
 });
 
 
