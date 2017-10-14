@@ -11,7 +11,7 @@ import noop from './noop';
 function swap(array, index1, index2, callback) {
     callback = callback || noop;
 
-    const newArray = array.slice();
+    const newArray = array.slice(0);
     const temp = newArray[index1];
     newArray[index1] = array[index2];
     newArray[index2] = temp;

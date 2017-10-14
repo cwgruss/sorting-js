@@ -1,3 +1,5 @@
+import Util from '../util/util';
+
 /**
  * Selection Sort:
  * @param  {function} compareFunction Specifies a function that defines the sort order
@@ -5,7 +7,7 @@
  */
 function selectionSort(arr) {
     return function (compareFunction) {
-        const result = arr.slice(0);
+        let result = arr.slice(0);
         let temp = null;
         let i = 0;
         let smallest = null;
@@ -19,10 +21,7 @@ function selectionSort(arr) {
                 }
             }
             if (smallest !== pos) {
-                temp = result[pos];
-                result[pos] = result[smallest];
-                result[smallest] = temp;
-                temp = null;
+                result = Util.swap(result,pos,smallest);
             }
             pos += 1;
         }
