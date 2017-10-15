@@ -7,22 +7,35 @@
     <script type="text/javascript" src="dist/bundle.js">
     </script>
     <script>
- var array = [4,3,1,2,10,2,2,8,5,11];
-    const a = new Sort(array);
-    var sorted = a.quickSort(function(a,b){
-        return a < b;
-    });
-    console.log("Sorted: ",sorted);
-    // console.log('====== SORTING-JS ======');
-// console.log(`Original Array: ${a.toString()}`);
-//
-// let result = a.selectionSort((item1, item2) => item1 < item2);
-// console.log(`Selection Sort:${result}`);
-// result = a.bubbleSort((item1, item2) => item1 < item2);
-// console.log(`Bubble Sort:${result}`);
-// result = a.quickSort((item1, item2) => item1 <= item2);
-// console.log(`Quick Sort: ${result}`);
-</script>
+        console.log('====== SORTING-JS ======');
+        var array = Util.generateUniqueArray(0, 8);
+        console.log("UNSORTED: ", array);
+        var SortA = new Sort(array);
+        var sorted = SortA.mergeSort(function (a, b) {
+            return a < b;
+        });
+        console.table([
+            ['JS', 'CWG'],
+            [array.sort(function (a, b) {
+                return a - b;
+            }), sorted]
+        ]);
+
+        console.log('====== SORTING-JS ======');
+        var array = Util.generateRandomArray(10, 10);
+        console.log("UNSORTED: ", array);
+        var
+            SortA = new Sort(array);
+        var sorted = SortA.mergeSort(function (a, b) {
+            return a < b;
+        });
+        console.table([
+            ['JS', 'CWG'],
+            [array.sort(function (a, b) {
+                return a - b;
+            }), sorted]
+        ]);
+    </script>
 </head>
 
 <body>

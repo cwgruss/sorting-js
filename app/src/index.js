@@ -1,4 +1,5 @@
 import bubbleSort from './sort/bubble-sort';
+import mergeSort from './sort/merge-sort';
 import selectionSort from './sort/selection-sort';
 import quickSort from './sort/quick-sort';
 import Util from './util/util';
@@ -28,6 +29,7 @@ Sort.prototype = {
         this.bubbleSort = bubbleSort(this.arr);
         this.selectionSort = selectionSort(this.arr);
         this.quickSort = quickSort(this.arr);
+        this.mergeSort = mergeSort(this.arr);
     },
 };
 
@@ -36,8 +38,8 @@ exports.Sort = Sort;
 var root = typeof self == 'object' && self.self === self && self ||
     typeof global == 'object' && global.global === global && global ||
     this || {};
-    
-(function(global) {
+
+(function (global) {
     'use strict';
     global.Util = Util;
     global.Sort = Sort;
