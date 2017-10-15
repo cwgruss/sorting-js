@@ -10,17 +10,17 @@ function bubbleSort(arr) {
         /* Copy the original array to avoid side effects. */
         let result = arr.slice(0);
 
-        let i = 0; 
+        let i = 0;
         let swapped = null;
 
         do {
             swapped = false;
             for (i = 0; i < this.length - 1; i += 1) {
-               /* If the compareFunction(a,b) shows that items are in the
-                * wrong order, swap the two elements and continue looping
-                * through the array. */
+                /* If the compareFunction(a,b) shows that items are in the
+                 * wrong order, swap the two elements and continue looping
+                 * through the array. */
                 if (compareFunction(result[i + 1], result[i])) {
-                    result = Util.swap(result,i,i+1);
+                    result = Util.swap(result, i, i + 1);
                     swapped = true;
                 }
             }

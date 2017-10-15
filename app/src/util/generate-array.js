@@ -1,5 +1,7 @@
 import noop from './noop';
-const { shuffle } = require('./shuffle');
+const {
+    shuffle
+} = require('./shuffle');
 
 function generateRandomArray(length, max, callback) {
     callback = callback || noop;
@@ -16,7 +18,7 @@ function generateRandomArray(length, max, callback) {
 }
 exports.generateRandomArray = generateRandomArray;
 
-function generateUniqueArray(start, end, callback) {
+function generateUniqueArray(start = 0, end, callback) {
     callback = callback || noop;
     const arr = [];
     let i;
