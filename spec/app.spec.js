@@ -39,10 +39,10 @@ describe('A random array', () => {
         expect(result).toEqual(sortedArray);
     });
 
-    // it('can be sorted with Quick Sort', () => {
-    //     const result = sortable.quickSort((item1, item2) => item1 < item2);
-    //     expect(result).toEqual(sortedArray);
-    // });
+    it('can be sorted with Quick Sort', () => {
+        const result = sortable.quickSort((item1, item2) => item1 < item2);
+        expect(result).toEqual(sortedArray);
+    });
 });
 
 
@@ -56,8 +56,7 @@ describe('A unique array', () => {
         sortedArray = tmp.sort((a,b)=>{
             return a-b;
         });
-        console.log(randomArray);
-        console.log(sortedArray);
+
         sortable = new Sort(randomArray);
     });
     afterEach(() => {

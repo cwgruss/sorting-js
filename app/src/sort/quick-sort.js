@@ -13,20 +13,13 @@ function quickSort(array) {
          * the subarray of elements that should come after the pivot.
          * The pivot will be the last element of the array, and is returned as 'pivotValue' along 
          * with the two subarrays.  */
-        let {beginning, pivotValue, ending } = Util.partition(array,0, pivot,compareFunction);
-        console.table([
-            ['length','Beginning', 'Pivot', 'Ending'],
-           [ array.length,
-            beginning.toString(),
-            pivotValue.toString(),
-            ending.toString()]]
-        );
+        let {beginning, pivots, ending } = Util.partition(array,0, pivot,compareFunction);
 
         /* Recursively partition the two subarrays, 'beginning' and 'ending', until each subarray
          * is composed of only 1 element. */
         return [
             ...sort(beginning,beginning.length-1,compareFunction),
-            pivotValue,
+            ...pivots,
             ...sort(ending, ending.length - 1, compareFunction)
         ];
     }
