@@ -4,6 +4,7 @@ const { generateRandomArray, generateUniqueArray } = require('./generate-array')
 const { isSorted } = require('./isSorted.js');
 const { partition } = require('./partition');
 const { isEmpty } = require('./isEmpty');
+const { getMiddleIndex, getMiddleValue } = require('./middle');
 
 const Util = (function () {
     return {
@@ -12,6 +13,8 @@ const Util = (function () {
         isSorted,
         partition,
         isEmpty,
+        getMiddleIndex,
+        getMiddleValue,
         generateRandomArray,
         generateUniqueArray,
     };

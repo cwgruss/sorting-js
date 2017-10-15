@@ -116,4 +116,34 @@ describe('Utility library', () => {
             expect(ending).toEqual([4]);
         }); 
     });
+
+    describe('should be able to get', () => {
+        it('the middle index of a full array', ()=>{
+            let array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 4, 6];
+            let mi = Util.getMiddleIndex(array);
+            let middleIndex = Math.floor((0 + array.length)/2);
+            expect(mi).toEqual(middleIndex);
+        });
+
+        it('the middle value of a full array', () => {
+            let array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 4, 6];
+            let mv = Util.getMiddleValue(array);
+            let middleIndex = Math.floor((0 + array.length) / 2);
+            expect(mv).toEqual(array[middleIndex]);
+        });
+
+        it('the middle index of a subarray', () => {
+            let array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 4, 6];
+            let mi = Util.getMiddleIndex(array,2,6);
+            let middleIndex = Math.floor((2 + 6) / 2);
+            expect(mi).toEqual(middleIndex);
+        });
+
+        it('the middle value of a subarray', () => {
+            let array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 4, 6];
+            let mv = Util.getMiddleValue(array,2, 6);
+            let middleIndex = Math.floor((2 + 6) / 2);
+            expect(mv).toEqual(array[middleIndex]);
+        });
+    });
 });
