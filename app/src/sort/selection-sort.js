@@ -5,9 +5,9 @@ import Util from '../util/util';
  * @param  {function} compareFunction Specifies a function that defines the sort order
  * @return {Array} result The sorted array.
  */
-function selectionSort(arr) {
+function selectionSort(array) {
     return function (compareFunction) {
-        let result = arr.slice(0); // Copy the array
+        let result = array.slice(0); // Copy the array
 
         /* Keep track of the leading element. If sorting the array in
          * ascending order, 'leading' will point to the smallest element
