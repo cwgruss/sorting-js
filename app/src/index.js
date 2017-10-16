@@ -1,7 +1,8 @@
 import bubbleSort from './sort/bubble-sort';
+import insertionSort from './sort/insertion-sort';
 import mergeSort from './sort/merge-sort';
-import selectionSort from './sort/selection-sort';
 import quickSort from './sort/quick-sort';
+import selectionSort from './sort/selection-sort';
 import Util from './util/util';
 
 const ArrayProto = Array.prototype;
@@ -27,6 +28,7 @@ Sort.prototype = {
     },
     init() {
         this.bubbleSort = bubbleSort(this.arr);
+        this.insertionSort = insertionSort(this.arr);
         this.selectionSort = selectionSort(this.arr);
         this.quickSort = quickSort(this.arr);
         this.mergeSort = mergeSort(this.arr);

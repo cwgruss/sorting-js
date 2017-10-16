@@ -8,25 +8,10 @@
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateUniqueArray(0, 8);
+        var array = Util.generateRandomArray(9, 9);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
-        var sorted = SortA.mergeSort(function (a, b) {
-            return a < b;
-        });
-        console.table([
-            ['JS', 'CWG'],
-            [array.sort(function (a, b) {
-                return a - b;
-            }), sorted]
-        ]);
-
-        console.log('====== SORTING-JS ======');
-        var array = Util.generateRandomArray(10, 10);
-        console.log("UNSORTED: ", array);
-        var
-            SortA = new Sort(array);
-        var sorted = SortA.mergeSort(function (a, b) {
+        var sorted = SortA.insertionSort(function (a, b) {
             return a < b;
         });
         console.table([
