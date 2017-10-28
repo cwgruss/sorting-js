@@ -8,17 +8,20 @@
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateRandomArray(9, 9);
+        var array = Util.generateRandomArray(8, 9);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
-        var sorted = SortA.insertionSort(function (a, b) {
-            return a < b;
+        var sorted = SortA.countingSort(function (a, b) {
+            return a > b;
+        });
+        var sortedJS = array.sort(function (a, b) {
+            return b - a;
         });
         console.table([
             ['JS', 'CWG'],
-            [array.sort(function (a, b) {
-                return a - b;
-            }), sorted]
+            [sortedJS.toString(), sorted.toString()],
+            [sortedJS, sorted]
+
         ]);
     </script>
 </head>

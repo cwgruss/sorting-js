@@ -1,4 +1,5 @@
 import bubbleSort from './sort/bubble-sort';
+import countingSort from './sort/counting-sort';
 import insertionSort from './sort/insertion-sort';
 import mergeSort from './sort/merge-sort';
 import quickSort from './sort/quick-sort';
@@ -28,10 +29,12 @@ Sort.prototype = {
     },
     init() {
         this.bubbleSort = bubbleSort(this.arr);
+        this.countingSort = countingSort(this.arr);
         this.insertionSort = insertionSort(this.arr);
-        this.selectionSort = selectionSort(this.arr);
-        this.quickSort = quickSort(this.arr);
         this.mergeSort = mergeSort(this.arr);
+
+        this.quickSort = quickSort(this.arr);
+        this.selectionSort = selectionSort(this.arr);
     },
 };
 

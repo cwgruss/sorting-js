@@ -55,6 +55,13 @@ describe('A random array', () => {
         expect(result).toEqual(sortedArray);
         expect(randomArray).toEqual(randomArrayCopy);
     });
+
+    it('can be sorted with Countingg Sort', () => {
+        const result = sortable.countingSort((item1, item2) => item1 < item2);
+
+        expect(result).toEqual(sortedArray);
+        expect(randomArray).toEqual(randomArrayCopy);
+    });
 });
 
 
@@ -103,6 +110,13 @@ describe('A unique array', () => {
 
     it('can be sorted with Quick Sort', () => {
         const result = sortable.quickSort((item1, item2) => item1 < item2);
+
+        expect(result).toEqual(sortedArray);
+        expect(randomArray).toEqual(randomArrayCopy);
+    });
+
+    it('can be sorted with Counting Sort', () => {
+        const result = sortable.countingSort((item1, item2) => item1 < item2);
 
         expect(result).toEqual(sortedArray);
         expect(randomArray).toEqual(randomArrayCopy);
