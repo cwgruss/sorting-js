@@ -12,7 +12,7 @@ import Util from '../util/util';
  * @param {*} compareFunction 
  */
 const insert = (array, rightIndex, value, compareFunction) => {
-    const result = array.slice(0); // Copy the array
+    let result = array.slice(0); // Copy the array
 
     /* Starting at the right, at the end of the sorted parition, traverse
      * the array (right to left) until an element that comes before 'value' is found, or the
@@ -22,7 +22,7 @@ const insert = (array, rightIndex, value, compareFunction) => {
 
         /* Make room for the element 'value' by shifting elements that
          * come after 'value' to the right. */
-        result[i + 1] = result[i];
+        result = Util.swap(result, i + 1, i);
 
         i -= 1;
     }
