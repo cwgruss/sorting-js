@@ -8,14 +8,16 @@
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateRandomArray(8, 9);
+        var array = Util.generateRandomArray(5, 7);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
         var sorted = SortA.countingSort(function (a, b) {
-            return a > b;
-        });
+            return a < b;
+        }, false);
+
+
         var sortedJS = array.sort(function (a, b) {
-            return b - a;
+            return a - b;
         });
         console.table([
             ['JS', 'CWG'],
@@ -23,6 +25,33 @@
             [sortedJS, sorted]
 
         ]);
+
+        console.table([
+            ['SortA', 'array'],
+            [SortA, array]
+        ]);
+
+        var sorted = SortA.countingSort(function (a, b) {
+            return a < b;
+        }, true);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
     </script>
 </head>
 

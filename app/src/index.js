@@ -1,20 +1,16 @@
-import bubbleSort from './sort/bubble-sort';
-import countingSort from './sort/counting-sort';
-import insertionSort from './sort/insertion-sort';
-import mergeSort from './sort/merge-sort';
-import quickSort from './sort/quick-sort';
-import selectionSort from './sort/selection-sort';
+import BubbleSort from './sort/bubble-sort';
+import CountingSort from './sort/counting-sort';
 import Util from './util/util';
 
 const ArrayProto = Array.prototype;
 // const ObjProto = Object.prototype;
 
 function Sort(arr) {
-    this.arr = null;
-    this.length = 0;
+    this.array = null;
+
     if (arr instanceof Array) {
-        this.arr = arr;
-        this.length = this.arr.length;
+        this.array = arr.slice();
+        // this.length = Array.length.apply(this.array);
     }
     this.init();
 }
@@ -25,16 +21,16 @@ Sort.prototype = {
     selectionSort: null,
     quickSort: null,
     toString() {
-        return ArrayProto.toString.call(this.arr);
+        return ArrayProto.toString.apply(this.array);
     },
     init() {
-        this.bubbleSort = bubbleSort(this.arr);
-        this.countingSort = countingSort(this.arr);
-        this.insertionSort = insertionSort(this.arr);
-        this.mergeSort = mergeSort(this.arr);
+        this.bubbleSort = BubbleSort.sort.bind(this.array);
+        this.countingSort = CountingSort.sort.bind(this.array);
+        // this.insertionSort = insertionSort(this.arr);
+        // this.mergeSort = mergeSort(this.arr);
 
-        this.quickSort = quickSort(this.arr);
-        this.selectionSort = selectionSort(this.arr);
+        // this.quickSort = quickSort(this.arr);
+        // this.selectionSort = selectionSort(this.arr);
     },
 };
 

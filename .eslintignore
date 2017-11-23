@@ -1,0 +1,4 @@
+dist/**/*.js
+
+#Ignore all JavaScript spec files
+spec/**/*.spec.js
