@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "start": "npm run build && node dist/bundle.js",
-        "watch": "",
+        "watch": "webpack --watch --debug",
         "build": "webpack --debug",
         "test": "karma start karma.conf.js --single-run",
         "clean": "rm -r dist/*"

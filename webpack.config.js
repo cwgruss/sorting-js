@@ -15,6 +15,11 @@ module.exports = {
             loader: 'babel-loader',
         }],
     },
+    watchOptions: {
+        aggregateTimeout: 500,
+        poll: 1000,
+        ignored: [/node_modules/, 'spec/**/*.spec.js'],
+    },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
