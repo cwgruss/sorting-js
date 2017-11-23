@@ -8,10 +8,10 @@
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateUniqueArray(0, 7);
+        var array = Util.generateRandomArray(5, 7);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
-        var sorted = SortA.bubbleSort(function (a, b) {
+        var sorted = SortA.countingSort(function (a, b) {
             return a < b;
         }, false);
 
@@ -31,9 +31,27 @@
             [SortA, array]
         ]);
 
-        var sorted = SortA.bubbleSort(function (a, b) {
+        var sorted = SortA.countingSort(function (a, b) {
             return a < b;
         }, true);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
     </script>
 </head>
 

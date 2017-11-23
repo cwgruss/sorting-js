@@ -1,4 +1,5 @@
 import BubbleSort from './sort/bubble-sort';
+import CountingSort from './sort/counting-sort';
 import Util from './util/util';
 
 const ArrayProto = Array.prototype;
@@ -24,7 +25,7 @@ Sort.prototype = {
     },
     init() {
         this.bubbleSort = BubbleSort.sort.bind(this.array);
-        // this.countingSort = countingSort(this.arr);
+        this.countingSort = CountingSort.sort.bind(this.array);
         // this.insertionSort = insertionSort(this.arr);
         // this.mergeSort = mergeSort(this.arr);
 
