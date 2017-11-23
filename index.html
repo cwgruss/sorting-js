@@ -8,33 +8,50 @@
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateUniqueArray(0, 8);
+        var array = Util.generateRandomArray(5, 7);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
-        var sorted = SortA.mergeSort(function (a, b) {
+        var sorted = SortA.countingSort(function (a, b) {
             return a < b;
+        }, false);
+
+
+        var sortedJS = array.sort(function (a, b) {
+            return a - b;
         });
         console.table([
             ['JS', 'CWG'],
-            [array.sort(function (a, b) {
-                return a - b;
-            }), sorted]
+            [sortedJS.toString(), sorted.toString()],
+            [sortedJS, sorted]
+
         ]);
 
-        console.log('====== SORTING-JS ======');
-        var array = Util.generateRandomArray(10, 10);
-        console.log("UNSORTED: ", array);
-        var
-            SortA = new Sort(array);
-        var sorted = SortA.mergeSort(function (a, b) {
-            return a < b;
-        });
         console.table([
-            ['JS', 'CWG'],
-            [array.sort(function (a, b) {
-                return a - b;
-            }), sorted]
+            ['SortA', 'array'],
+            [SortA, array]
         ]);
+
+        var sorted = SortA.countingSort(function (a, b) {
+            return a < b;
+        }, true);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
+        console.log(`${JSON.stringify(sorted.next().value)}`);
     </script>
 </head>
 
