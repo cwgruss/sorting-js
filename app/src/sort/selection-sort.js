@@ -30,7 +30,6 @@ function selectionSort(array) {
             /* Loop through the unsorted array, from 'headPosition' to
              * the last element, searching for the leading-most element. */
             for (i = headPosition + 1; i < this.length; i += 1) {
-
                 /* If the compareFunction shows that array[i] should come before
                  * array[leading], make array[i] the leading-most element. */
                 if (compareFunction(result[i], result[leading])) {
