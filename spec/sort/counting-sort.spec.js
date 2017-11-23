@@ -3,7 +3,7 @@ import {
     Util,
 } from '../../app/src/index';
 
-describe('Bubble Sort\'s module', () => {
+describe('Counting Sort\'s module', () => {
     let randomArray = null;
     let randomArrayCopy = null;
     let arraySortedByJS = null;
@@ -26,14 +26,14 @@ describe('Bubble Sort\'s module', () => {
         });
 
         it('returns a sorted array', () => {
-            const result = SortableArray.bubbleSort((item1, item2) => item1 < item2, false);
+            const result = SortableArray.countingSort((item1, item2) => item1 < item2, false);
 
             expect(result).toEqual(arraySortedByJS);
             expect(randomArray).toEqual(randomArrayCopy);
         });
 
-        it('yields a sorted array', () => {
-            const generator = SortableArray.bubbleSort((item1, item2) => item1 < item2, true);
+        it('yields the steps to sorting the array', () => {
+            const generator = SortableArray.countingSort((item1, item2) => item1 < item2, true);
             let done = false;
             let currentNext;
             let currentNextValue;
@@ -62,14 +62,14 @@ describe('Bubble Sort\'s module', () => {
         });
 
         it('returns a sorted array', () => {
-            const result = SortableArray.bubbleSort((item1, item2) => item1 < item2, false);
+            const result = SortableArray.countingSort((item1, item2) => item1 < item2, false);
 
             expect(result).toEqual(arraySortedByJS);
             expect(randomArray).toEqual(randomArrayCopy);
         });
 
         it('yields a sorted array', () => {
-            const generator = SortableArray.bubbleSort((item1, item2) => item1 < item2, true);
+            const generator = SortableArray.countingSort((item1, item2) => item1 < item2, true);
             let done = false;
             let currentNext;
             let currentNextValue;
@@ -98,14 +98,14 @@ describe('Bubble Sort\'s module', () => {
         });
 
         it('returns a sorted array', () => {
-            const result = SortableArray.bubbleSort((item1, item2) => item1 < item2, false);
+            const result = SortableArray.countingSort((item1, item2) => item1 < item2, false);
 
             expect(result).toEqual(arraySortedByJS);
             expect(randomArray).toEqual(randomArrayCopy);
         });
 
-        it('yields a sorted array', () => {
-            const generator = SortableArray.bubbleSort((item1, item2) => item1 < item2, true);
+        it('yields a array sorted array', () => {
+            const generator = SortableArray.countingSort((item1, item2) => item1 < item2, true);
             let done = false;
             let currentNext;
             let currentNextValue;
@@ -134,14 +134,14 @@ describe('Bubble Sort\'s module', () => {
         });
 
         it('returns a sorted array', () => {
-            const result = SortableArray.bubbleSort((item1, item2) => item1 < item2, false);
+            const result = SortableArray.countingSort((item1, item2) => item1 < item2, false);
 
             expect(result).toEqual(arraySortedByJS);
             expect(randomArray).toEqual(randomArrayCopy);
         });
 
-        it('yields a sorted array', () => {
-            const generator = SortableArray.bubbleSort((item1, item2) => item1 < item2, true);
+        it('yields the steps to sorting the array', () => {
+            const generator = SortableArray.countingSort((item1, item2) => item1 < item2, true);
             let done = false;
             let currentNext;
             let currentNextValue;
