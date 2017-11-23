@@ -34,24 +34,13 @@
         var sorted = SortA.countingSort(function (a, b) {
             return a < b;
         }, true);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
-        console.log(`${JSON.stringify(sorted.next().value)}`);
+        var index = 0;
+        var value = null;
+        while (index < 50) {
+            value = sorted.next().value;
+            console.log(JSON.stringify(value));
+            index++;
+        }
     </script>
 </head>
 

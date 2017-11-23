@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const CountingSort = (function () {
     const initBucketsToZero = function (array) {
         const buckets = {};
@@ -58,7 +60,7 @@ const CountingSort = (function () {
         let index = 0;
         let elValue = null;
         const arrayCopy = array.slice(0); // Copy the array
-        const bucketsCopy = buckets;
+        const bucketsCopy = _.cloneDeep(buckets);
 
         for (index = 0; index < arrayCopy.length; index += 1) {
             elValue = arrayCopy[index];
@@ -67,14 +69,15 @@ const CountingSort = (function () {
                 yield bucketsCopy;
             }
         }
+        return bucketsCopy;
     };
 
     const sortGenerator = function* (array, buckets, isAscending) {
         const arrayCopy = array.slice(0); // Copy the array
-        const bucketsCopy = buckets;
+        const bucketsCopy = _.cloneDeep(buckets);
 
         let index = isAscending ? 0 : arrayCopy.length - 1;
-        const keys = Object.keys(buckets);
+        const keys = Object.keys(bucketsCopy);
         let currentKey = null;
         const newArray = [];
         for (let i = 0; i < keys.length; i += 1) {
@@ -87,15 +90,17 @@ const CountingSort = (function () {
                 yield newArray;
             }
         }
+        return newArray;
     };
 
     const countingSortGenerator = function* (compareFunction) {
-        const result = this.slice(0); // Copy the array
-        const buckets = initBucketsToZero(result);
+        let result = this.slice(0); // Copy the array
+        let buckets = initBucketsToZero(result);
         const isAscending = compareFunction(0, 1);
 
-        yield* countGenerator(result, buckets);
-        yield* sortGenerator(result, buckets, isAscending);
+        buckets = yield* countGenerator(result, buckets);
+        result = yield* sortGenerator(result, buckets, isAscending);
+        return result;
     };
 
     return {
