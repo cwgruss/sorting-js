@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import {
+    cloneDeep,
+} from 'lodash';
 
 const CountingSort = (function () {
     const initBucketsToZero = function (array) {
@@ -60,7 +62,7 @@ const CountingSort = (function () {
         let index = 0;
         let elValue = null;
         const arrayCopy = array.slice(0); // Copy the array
-        const bucketsCopy = _.cloneDeep(buckets);
+        const bucketsCopy = cloneDeep(buckets);
 
         for (index = 0; index < arrayCopy.length; index += 1) {
             elValue = arrayCopy[index];
@@ -74,7 +76,7 @@ const CountingSort = (function () {
 
     const sortGenerator = function* (array, buckets, isAscending) {
         const arrayCopy = array.slice(0); // Copy the array
-        const bucketsCopy = _.cloneDeep(buckets);
+        const bucketsCopy = cloneDeep(buckets);
 
         let index = isAscending ? 0 : arrayCopy.length - 1;
         const keys = Object.keys(bucketsCopy);

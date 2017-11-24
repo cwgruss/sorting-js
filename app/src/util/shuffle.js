@@ -1,15 +1,19 @@
-const _ = require('lodash');
 import noop from './noop';
 
-function shuffle(array, callback) {
+const {
+    shuffle,
+} = require('lodash');
+
+
+function shuffleArray(array, callback) {
     callback = callback || noop;
 
-    if (typeof _.shuffle !== 'function') {
+    if (typeof shuffle !== 'function') {
         console.error('lodash: Shuffle has not been defined');
         return null;
     }
-    let shuffledArray = _.shuffle(array);
+    const shuffledArray = shuffle(array);
     callback(shuffledArray);
     return shuffledArray;
 }
-exports.shuffle = shuffle;
+exports.shuffle = shuffleArray;

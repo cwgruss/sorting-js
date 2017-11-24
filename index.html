@@ -8,10 +8,10 @@
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateRandomArray(5, 7);
+        var array = Util.generateUniqueArray(0, 7);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
-        var sorted = SortA.countingSort(function (a, b) {
+        var sorted = SortA.insertionSort(function (a, b) {
             return a < b;
         }, false);
 
@@ -26,14 +26,11 @@
 
         ]);
 
-        console.table([
-            ['SortA', 'array'],
-            [SortA, array]
-        ]);
 
-        var sorted = SortA.countingSort(function (a, b) {
+        var sorted = SortA.insertionSort(function (a, b) {
             return a < b;
         }, true);
+
         var index = 0;
         var value = null;
         while (index < 50) {

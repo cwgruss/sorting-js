@@ -1,20 +1,28 @@
 const path = require('path');
-const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    entry: ['babel-polyfill', './app.js'],
+    entry: [
+        'babel-polyfill',
+        './app.js',
+    ],
+    plugins: [
+        new DashboardPlugin(),
+    ],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    devtool: 'inline-source-map',
     module: {
         rules: [{
             test: /\.js$/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true,
+                },
+            }],
             exclude: /node_modules/,
-            loader: 'babel-loader',
         }],
     },
     watchOptions: {
@@ -22,8 +30,5 @@ module.exports = {
         poll: 1000,
         ignored: [/node_modules/, 'spec/**/*.spec.js'],
     },
-    plugins: [
-        new DashboardPlugin(),
-        new BundleAnalyzerPlugin(),
-    ],
+
 };
