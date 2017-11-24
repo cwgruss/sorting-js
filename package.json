@@ -4,13 +4,14 @@
     "description": "A JavaScript project for learning sorting and sorting algorithms.",
     "main": "app.js",
     "scripts": {
-        "start": "npm run build && npm run serve",
-        "serve": "webpack-dev-server --open",
+        "start": "npm run build:dev && node ./dist/bunde.dev.js",
+        "test": "npm run build:test && karma start karma.conf.js --single-run",
+        "serve": "npm run build && webpack-dev-server --open",
         "watch": "webpack --watch",
-        "build:dev": "webpack --env='dev' --config webpack.dev.js",
-        "build:prod": "webpack --env='prod' --config webpack.prod.js",
+        "build:dev": "webpack --config webpack.dev.js --env.NODE_ENV=local",
+        "build:test": "webpack --config webpack.dev.js --env.NODE_ENV=test",
+        "build:prod": "webpack --config webpack.prod.js --env.production",
         "dev": "webpack-dashboard -- webpack && node dist/bundle.js",
-        "test": "karma start karma.conf.js --single-run",
         "clean": "rm -r dist/*"
     },
     "repository": {

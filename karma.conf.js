@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Sun Sep 10 2017 12:09:14 GMT-0500 (CDT)
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.base.js');
 const path = require('path');
 
 module.exports = function (config) {
