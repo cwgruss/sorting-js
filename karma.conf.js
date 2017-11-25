@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Sun Sep 10 2017 12:09:14 GMT-0500 (CDT)
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.base.js');
 const path = require('path');
 
 module.exports = function (config) {
@@ -22,26 +22,39 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             // add webpack as preprocessor
-            'spec/*.spec.js': ['webpack', 'sourcemap'],
-            'spec/**/*.spec.js': ['webpack', 'sourcemap'],
+            '**/spec/*.spec.js': ['webpack', 'sourcemap', 'coverage'],
+            '**/spec/**/*.spec.js': ['webpack', 'sourcemap', 'coverage'],
         },
 
         webpack: {
             devtool: 'inline-source-map',
             module: {
-                loaders: [
-                    {
-                        test: /\.js$/,
-                        loader: 'babel-loader',
-                    },
-                ],
+                loaders: [{
+                    test: /\.js$/,
+                    loader: 'babel-loader',
+                }, ],
             },
         },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['html', 'coverage', 'progress'],
+
+        htmlReporter: {
+            outputDir: 'karma/karma_html', // where to put the reports  
+            templatePath: null, // set if you moved jasmine_template.html 
+            focusOnFailures: true, // reports show failures on start 
+            namedFiles: true, // name files instead of creating sub-directories 
+            pageTitle: 'Sorting JS', // page title for reports; browser info by default 
+            urlFriendlyName: false, // simply replaces spaces with _ for files/dirs 
+            reportName: 'sorting-js.tests', // report summary filename; browser info by default 
+        },
+        // optionally, configure the reporter
+        coverageReporter: {
+            type: 'html',
+            dir: 'karma/coverage/',
+        },
 
         // web server port
         port: 9876,

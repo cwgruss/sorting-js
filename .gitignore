@@ -4,3 +4,4 @@ dist/
 
 #Ignore all Node modules
 node_modules
+karma

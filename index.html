@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="dist/bundle.js">
+    <script type="text/javascript" src="./dist/main.dev.bundle.js">
     </script>
     <script>
         console.log('====== SORTING-JS ======');
-        var array = Util.generateRandomArray(5, 7);
+        var array = Util.generateUniqueArray(0, 7);
         console.log("UNSORTED: ", array);
         var SortA = new Sort(array);
-        var sorted = SortA.countingSort(function (a, b) {
+        var sorted = SortA.insertionSort(function (a, b) {
             return a < b;
         }, false);
 
@@ -19,6 +19,7 @@
         var sortedJS = array.sort(function (a, b) {
             return a - b;
         });
+
         console.table([
             ['JS', 'CWG'],
             [sortedJS.toString(), sorted.toString()],
@@ -26,14 +27,11 @@
 
         ]);
 
-        console.table([
-            ['SortA', 'array'],
-            [SortA, array]
-        ]);
 
-        var sorted = SortA.countingSort(function (a, b) {
+        var sorted = SortA.insertionSort(function (a, b) {
             return a < b;
         }, true);
+
         var index = 0;
         var value = null;
         while (index < 50) {
