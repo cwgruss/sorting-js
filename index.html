@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="dist/bundle.js">
+    <script type="text/javascript" src="./dist/main.dev.bundle.js">
     </script>
     <script>
         console.log('====== SORTING-JS ======');
@@ -19,6 +19,7 @@
         var sortedJS = array.sort(function (a, b) {
             return a - b;
         });
+
         console.table([
             ['JS', 'CWG'],
             [sortedJS.toString(), sorted.toString()],

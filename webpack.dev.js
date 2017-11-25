@@ -6,9 +6,5 @@ module.exports = (env = {}) => {
 
     return merge(base(env), {
         devtool: 'inline-source-map',
-        devServer: {
-            inline: true,
-            contentBase: './dist',
-        },
     });
 };

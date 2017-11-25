@@ -1,6 +1,6 @@
 const {
     Sort,
-    Util
+    Util,
 } = require('./app/src/index');
 
 // Establish the root object, `window` (`self`) in the browser, `global`

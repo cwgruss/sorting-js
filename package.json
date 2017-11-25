@@ -4,9 +4,9 @@
     "description": "A JavaScript project for learning sorting and sorting algorithms.",
     "main": "app.js",
     "scripts": {
-        "start": "npm run build:dev && node ./dist/bunde.dev.js",
+        "start": "npm run build:dev && npm run serve",
         "test": "npm run build:test && karma start karma.conf.js --single-run",
-        "serve": "npm run build && webpack-dev-server --open",
+        "serve": "webpack-dev-server --open --config webpack.base.js",
         "watch": "webpack --watch",
         "build:dev": "webpack --config webpack.dev.js --env.NODE_ENV=local",
         "build:test": "webpack --config webpack.dev.js --env.NODE_ENV=test",
