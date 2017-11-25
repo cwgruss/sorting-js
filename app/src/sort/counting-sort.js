@@ -1,6 +1,4 @@
-import {
-    cloneDeep,
-} from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 const CountingSort = (function () {
     const initBucketsToZero = function (array) {

@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env = {}) => {
     const NODE_ENV = env.NODE_ENV || 'local';
@@ -17,7 +17,6 @@ module.exports = (env = {}) => {
             filename: `[name].${ENV}.bundle.js`,
             path: path.resolve(__dirname, 'dist'),
         },
-        // externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
         module: {
             rules: [{
                 test: /\.js$/,
@@ -32,7 +31,6 @@ module.exports = (env = {}) => {
         },
         devServer: {
             inline: true,
-            index: 'index.html',
             contentBase: './dist',
         },
         watchOptions: {
@@ -40,5 +38,8 @@ module.exports = (env = {}) => {
             poll: 1000,
             ignored: [/node_modules/, 'spec/**/*.spec.js'],
         },
+        plugins: [
+            new HtmlWebpackPlugin(),
+        ],
     };
 };

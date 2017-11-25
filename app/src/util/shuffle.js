@@ -1,9 +1,5 @@
+import shuffle from 'lodash/shuffle';
 import noop from './noop';
-
-const {
-    shuffle,
-} = require('lodash');
-
 
 function shuffleArray(array, callback) {
     callback = callback || noop;
