@@ -1,9 +1,11 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const base = require('./webpack.base.js');
 
-module.exports = (env = {}) {
+module.exports = (env = {}) => {
     return merge(base(env), {
         devtool: 'source-map',
         plugins: [

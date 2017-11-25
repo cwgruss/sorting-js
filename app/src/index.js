@@ -34,15 +34,3 @@ Sort.prototype = {
         // this.selectionSort = selectionSort(this.arr);
     },
 };
-
-exports.Util = Util;
-exports.Sort = Sort;
-var root = typeof self == 'object' && self.self === self && self ||
-    typeof global == 'object' && global.global === global && global ||
-    this || {};
-
-(function (global) {
-    'use strict';
-    global.Util = Util;
-    global.Sort = Sort;
-}(root));

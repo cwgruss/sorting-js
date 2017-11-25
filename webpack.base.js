@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const DashboardPlugin = require('webpack-dashboard/plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = (env = {}) => {
     const NODE_ENV = env.NODE_ENV || 'local';
@@ -18,6 +17,8 @@ module.exports = (env = {}) => {
             filename: `[name].${ENV}.bundle.js`,
             path: path.resolve(__dirname, 'dist'),
         },
+        target: 'node', // in order to ignore built-in modules like path, fs, etc. 
+        externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
         module: {
             rules: [{
                 test: /\.js$/,
